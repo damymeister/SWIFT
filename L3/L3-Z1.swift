@@ -5,6 +5,7 @@ let second = """
     MICHAEL
     SCHUMACHER
     FERRARI
+    2005
     """
 print(first)
 print(second)
