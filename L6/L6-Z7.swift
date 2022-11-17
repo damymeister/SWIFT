@@ -16,9 +16,33 @@ for i in 1...elementy{
 }
     tab.append(liczba)
 }
+print("Wyswietlam tablice: ")
+print(" ", terminator: "[")
+for i in 0  ..< elementy {
+    print("\(tab[i])", terminator: ", ")
+}
+print("]")
+
 var index_start_ciagu: Int = 0
 var dlugosc_ciagu: Int = 0
-for i in 0 .. < elementy {
-    
+var max_dlugosc_ciagu : Int = 0
+for i in 1  ..< elementy {
+    if(tab[i]>tab[i-1])
+    {
+        dlugosc_ciagu += 1
+        if(dlugosc_ciagu>max_dlugosc_ciagu)
+        {
+            max_dlugosc_ciagu = dlugosc_ciagu
+            index_start_ciagu = i - dlugosc_ciagu + 1
+        }
+    }
+    else
+    {
+        dlugosc_ciagu = 1
+    }
 }
-//Dokonczyc
+print("Dlugosc najwiekszego podciagu rosnacego to \(max_dlugosc_ciagu), a index jego poczatku to \(index_start_ciagu)")
+for i in index_start_ciagu ..< index_start_ciagu + max_dlugosc_ciagu{
+ print("\(tab[i])", terminator: ", ")
+}
+print("")
