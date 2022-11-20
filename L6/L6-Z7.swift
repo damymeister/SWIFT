@@ -24,8 +24,8 @@ for i in 0  ..< elementy {
 print("]")
 
 var index_start_ciagu: Int = 0
-var dlugosc_ciagu: Int = 0
-var max_dlugosc_ciagu : Int = 0
+var dlugosc_ciagu: Int = 1
+var max_dlugosc_ciagu : Int = 1
 for i in 1  ..< elementy {
     if(tab[i]>tab[i-1])
     {
@@ -38,11 +38,18 @@ for i in 1  ..< elementy {
     }
     else
     {
-        dlugosc_ciagu = 1
+      dlugosc_ciagu = 1
     }
 }
+if(max_dlugosc_ciagu==1)
+{
+    print("Ciag nie ma podciagu rosnacego!")
+}
+else
+{
 print("Dlugosc najwiekszego podciagu rosnacego to \(max_dlugosc_ciagu), a index jego poczatku to \(index_start_ciagu)")
 for i in index_start_ciagu ..< index_start_ciagu + max_dlugosc_ciagu{
  print("\(tab[i])", terminator: ", ")
 }
 print("")
+}
