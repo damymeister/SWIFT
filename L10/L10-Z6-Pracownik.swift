@@ -6,7 +6,7 @@ class Pracownik : Osoba {
     var stanowisko : Stanowisko?
     var nazwaFirmy: String = ""
     
-    init(imie: String, nazwisko: String, rokUr: Int, iloscH: Int, rokZatrudnienia:Int, stawkazaH: Double, stanowisko: Stanowisko, nazwaFirmy:String)
+    init(imie: String, nazwisko: String, rokUr: Int, iloscH: Int, rokZatrudnienia:Int, stawkazaH: Double, stanowisko: Stanowisko?, nazwaFirmy:String)
         {
             self.rokZatrudnienia = rokZatrudnienia
             self.iloscH = iloscH
@@ -30,13 +30,8 @@ class Pracownik : Osoba {
             print("Ilosc godzin: \(iloscH)")
             print("Rok zatrudnienia: \(rokZatrudnienia)")
             print("Stawka za godzine: \(stawkazaH)")
-            if stanowisko == Stanowisko.TeamBoss{
-                print("Stanowisko: TeamBoss")
-            }
-            else{
-                print("Stanowisko: Driver")
-                }
+            print("Stanowisko: \(stanowisko!)")
             print("Nazwa firmy: \(nazwaFirmy)")
-            
-            }
 }
+}
+
