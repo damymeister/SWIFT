@@ -1,5 +1,3 @@
-import Foundation
-
 enum Ozdoba : String, CaseIterable{
     case bombka = "O"
     case cukierek = "z"
@@ -12,5 +10,6 @@ enum RodzajDrzewa : Int, CaseIterable {
 }
 var ch : Choinka = Choinka(wysokosc: 3, rodzaj : RodzajDrzewa.iglaste, rokzasadzenia: 2, lpoziomow: 3, hUnderGalaz: 3, ileozdob: 4, Rodzajozdob: [Ozdoba.bombka, Ozdoba.cukierek, Ozdoba.pierniczek, Ozdoba.zabawka])
 ch.rysujOzdobionaChoinke(layercount: 3, levelcount: 7)
-
+ch.wyswietl()
+print(ch.ozdobyDoKupienia(layercount: 3, levelcount: 7))
 
