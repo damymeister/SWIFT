@@ -55,7 +55,7 @@ class Choinka : Drzewo {
               for _ in 1...3 {
                   print("#",terminator: "")
               }
-              print()
+    
                 
             }
         }
@@ -106,13 +106,37 @@ class Choinka : Drzewo {
                   for _ in 1...3 {
                       print("#",terminator: "")
                   }
+                  
                   print()
-                    
                 }
-        
     }
-    func ozdobyDoKupienia()
-    {
-        
+    func ozdobyDoKupienia(layercount: Int, levelcount: Int) -> Int{
+          var cnt = 0;
+        let length = layercount * levelcount
+        var starcount = 1
+        var spacecount = length
+        for _ in 1...layercount {
+            for _ in 1...levelcount {
+                for i in 1...starcount {
+                    if (i % 2 == 0) {
+                        cnt += 1
+                    }
+                }
+                starcount += 2
+                spacecount -= 1
+            }
+            starcount = starcount - 2
+            spacecount = spacecount + 1
+            if levelcount <= 3 {
+                starcount -= 2
+                spacecount += 1
+                
+            } else {
+                starcount -= 4
+                spacecount += 2
+            }
+        }
+        return cnt - ileozdob
     }
 }
+
