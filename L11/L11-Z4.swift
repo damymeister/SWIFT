@@ -24,7 +24,17 @@ class StudentNaErasmusie : Student {
     func czasNaEras () -> Int {
         return dataZakon - dataRozp
     }
-    
+    func ocena () -> [(nazwa: String, ocena: Double)]{
+        var srednia : Double = srednia()
+       switch(srednia){
+        case 2.0...3.0: kursy.nazwa = 2.0
+        case 3.0...3.5: kursy.nazwa = 3.0
+        case 3.6...4.5: kursy.nazwa = 4.0
+        case 4.6...5.0: kursy.nazwa = 5.0
+        default: print("Srednia jest nieprawidlowa")
+}
+        
+    }
 }
 var ob = StudentNaErasmusie(imie: "Mateusz", nazwisko : "Adamczyk", rokUr : 2001, nrindex : 95357, kierunek : Kierunki.Informatyka, rokstudiow: 3, oceny : [3,4,3,2,2], nazwaUcz : "Harvard", dataRozp : 2022, dataZakon : 2023, kursy : [(nazwa: "JAVA", ocena : 5.0)])
 ob.show()
