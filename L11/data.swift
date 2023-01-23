@@ -1,7 +1,7 @@
 import Foundation
 
 
-var pesel : String = "21110206677"
+var pesel : String = "01221206677"
 var tab = Array(pesel)
 
 var rok_index = String(tab[1])
@@ -17,15 +17,14 @@ else{
 }
 mies += String(tab[3])
 var dzien : String = String(tab[4]) + String(tab[5])
-print("\(dzien)/\(mies)/\(rok)")
-var data : String = dzien + "/" + mies + "/" + rok
+var data : String = rok + "/" + mies + "/" + dzien
 print(data)
 
 
 
 let formatter = DateFormatter()
 formatter.dateFormat = "yyyy/MM/dd"
-let date = formatter.date(from: "2011/12/20")
+let date = formatter.date(from: data)
 let date2 = formatter.date(from: "2022/12/20")
 var i = date!.distance(to:date2!)
 var z = i / 31536000
