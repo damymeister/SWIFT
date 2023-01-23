@@ -1,19 +1,35 @@
 import Foundation
 
 
-var pesel : String = "01221206677"
-var peselchar = Array(pesel)
-print(peselchar)
+var pesel : String = "21110206677"
+var tab = Array(pesel)
+
+var rok_index = String(tab[1])
+
+var rok : String = "20" + String(tab[0]) + String(tab[1])
+var mies : String = ""
+if(tab[2] == "2")
+{
+    mies += "0"
+}
+else{
+    mies += "1"
+}
+mies += String(tab[3])
+var dzien : String = String(tab[4]) + String(tab[5])
+print("\(dzien)/\(mies)/\(rok)")
+var data : String = dzien + "/" + mies + "/" + rok
+print(data)
+
 
 
 let formatter = DateFormatter()
 formatter.dateFormat = "yyyy/MM/dd"
-let date = formatter.date(from: "2021/12/20")
+let date = formatter.date(from: "2011/12/20")
 let date2 = formatter.date(from: "2022/12/20")
 var i = date!.distance(to:date2!)
 var z = i / 31536000
 print(z)
-
 
 
 
